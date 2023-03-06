@@ -1,0 +1,330 @@
+[
+    {
+        "nombre": "4X",
+        "slug": "4x"
+    },
+    {
+        "nombre": "Acción",
+        "slug": "accion"
+    },
+    {
+        "nombre": "Arcade",
+        "slug": "arcade"
+    },
+    {
+        "nombre": "ARPG",
+        "slug": "arpg"
+    },
+    {
+        "nombre": "Aventura",
+        "slug": "aventura"
+    },
+    {
+        "nombre": "Aventura conversional",
+        "slug": "aventura-conversional"
+    },
+    {
+        "nombre": "Aventura gráfica",
+        "slug": "aventura-grafica"
+    },
+    {
+        "nombre": "Baile",
+        "slug": "baile"
+    },
+    {
+        "nombre": "Battle Royale",
+        "slug": "battle-royale"
+    },
+    {
+        "nombre": "Beat em Up",
+        "slug": "beat-em-up"
+    },
+    {
+        "nombre": "Brawler",
+        "slug": "brawler"
+    },
+    {
+        "nombre": "Bullethell",
+        "slug": "bullethell"
+    },
+    {
+        "nombre": "Carreras",
+        "slug": "carreras"
+    },
+    {
+        "nombre": "Cartas",
+        "slug": "cartas"
+    },
+    {
+        "nombre": "CCG",
+        "slug": "ccg"
+    },
+    {
+        "nombre": "Clicker",
+        "slug": "clicker"
+    },
+    {
+        "nombre": "Competitivo",
+        "slug": "competitivo"
+    },
+    {
+        "nombre": "Creación musical",
+        "slug": "creacion-musical"
+    },
+    {
+        "nombre": "Deportes",
+        "slug": "deportes"
+    },
+    {
+        "nombre": "Dual Stick Shooter",
+        "slug": "dual-stick-shooter"
+    },
+    {
+        "nombre": "Dungeon Crawler",
+        "slug": "dungeon-crawler"
+    },
+    {
+        "nombre": "Endless Runner",
+        "slug": "endless-runner"
+    },
+    {
+        "nombre": "Estrategia en tiempo real",
+        "slug": "estrategia-en-tiempo-real"
+    },
+    {
+        "nombre": "Estrategia por turnos",
+        "slug": "estrategia-por-turnos"
+    },
+    {
+        "nombre": "First Person Shooter",
+        "slug": "first-person-shooter"
+    },
+    {
+        "nombre": "First Person Walker",
+        "slug": "first-person-walker"
+    },
+    {
+        "nombre": "FPS",
+        "slug": "fps"
+    },
+    {
+        "nombre": "Gestión",
+        "slug": "gestion"
+    },
+    {
+        "nombre": "God Game",
+        "slug": "god-game"
+    },
+    {
+        "nombre": "Gran Estrategia",
+        "slug": "gran-estrategia"
+    },
+    {
+        "nombre": "Hack n Slash",
+        "slug": "hack-n-slash"
+    },
+    {
+        "nombre": "Hero Shooter",
+        "slug": "hero-shooter"
+    },
+    {
+        "nombre": "Incremental",
+        "slug": "incremental"
+    },
+    {
+        "nombre": "JRPG",
+        "slug": "jrpg"
+    },
+    {
+        "nombre": "Karaoke",
+        "slug": "karaoke"
+    },
+    {
+        "nombre": "Libro juego",
+        "slug": "libro-juego"
+    },
+    {
+        "nombre": "Lucha",
+        "slug": "lucha"
+    },
+    {
+        "nombre": "Mánager",
+        "slug": "manager"
+    },
+    {
+        "nombre": "Matamarcianos",
+        "slug": "matamarcianos"
+    },
+    {
+        "nombre": "Metroidvania",
+        "slug": "metroidvania"
+    },
+    {
+        "nombre": "MMO",
+        "slug": "mmo"
+    },
+    {
+        "nombre": "MMORPG",
+        "slug": "mmorpg"
+    },
+    {
+        "nombre": "MOBA",
+        "slug": "moba"
+    },
+    {
+        "nombre": "Multijugador",
+        "slug": "multijugador"
+    },
+    {
+        "nombre": "Musical",
+        "slug": "musical"
+    },
+    {
+        "nombre": "Musou",
+        "slug": "musou"
+    },
+    {
+        "nombre": "Novela Visual",
+        "slug": "novela-visual"
+    },
+    {
+        "nombre": "Party Game",
+        "slug": "party-game"
+    },
+    {
+        "nombre": "Pelicula interactiva",
+        "slug": "pelicula-interactiva"
+    },
+    {
+        "nombre": "Plataformas",
+        "slug": "plataformas"
+    },
+    {
+        "nombre": "Point and Click",
+        "slug": "point-and-click"
+    },
+    {
+        "nombre": "Point and Shoot",
+        "slug": "point-and-shoot"
+    },
+    {
+        "nombre": "Real-time 3D",
+        "slug": "real-time-3d"
+    },
+    {
+        "nombre": "Ritmo",
+        "slug": "ritmo"
+    },
+    {
+        "nombre": "RLS",
+        "slug": "rls"
+    },
+    {
+        "nombre": "Roguelike",
+        "slug": "roguelike"
+    },
+    {
+        "nombre": "Roguelite",
+        "slug": "roguelite"
+    },
+    {
+        "nombre": "RPG",
+        "slug": "rpg"
+    },
+    {
+        "nombre": "RPG de Acción",
+        "slug": "rpg-de-accion"
+    },
+    {
+        "nombre": "RPG tactico",
+        "slug": "rpg-tactico"
+    },
+    {
+        "nombre": "RTS",
+        "slug": "rts"
+    },
+    {
+        "nombre": "Run and Gun",
+        "slug": "run-and-gun"
+    },
+    {
+        "nombre": "Sandbox",
+        "slug": "sandbox"
+    },
+    {
+        "nombre": "Sandbox RPG",
+        "slug": "sandbox-rpg"
+    },
+    {
+        "nombre": "Shmup",
+        "slug": "shmup"
+    },
+    {
+        "nombre": "Shoot em Up",
+        "slug": "shoot-em-up"
+    },
+    {
+        "nombre": "Shooter",
+        "slug": "shooter"
+    },
+    {
+        "nombre": "Shooter on Rails",
+        "slug": "shooter-on-rails"
+    },
+    {
+        "nombre": "Sigilo",
+        "slug": "sigilo"
+    },
+    {
+        "nombre": "Sim",
+        "slug": "sim"
+    },
+    {
+        "nombre": "Simulación",
+        "slug": "simulacion"
+    },
+    {
+        "nombre": "Simulador",
+        "slug": "simulador"
+    },
+    {
+        "nombre": "Soulslike",
+        "slug": "soulslike"
+    },
+    {
+        "nombre": "Survival",
+        "slug": "survival"
+    },
+    {
+        "nombre": "Survival Horror",
+        "slug": "survival-horror"
+    },
+    {
+        "nombre": "TBS",
+        "slug": "tbs"
+    },
+    {
+        "nombre": "TCG",
+        "slug": "tcg"
+    },
+    {
+        "nombre": "Third Person Shooter",
+        "slug": "third-person-shooter"
+    },
+    {
+        "nombre": "Tower Defense",
+        "slug": "tower-defense"
+    },
+    {
+        "nombre": "TPS",
+        "slug": "tps"
+    },
+    {
+        "nombre": "Tycoon",
+        "slug": "tycoon"
+    },
+    {
+        "nombre": "WarGame",
+        "slug": "wargame"
+    }
+]

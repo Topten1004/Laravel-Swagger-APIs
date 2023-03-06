@@ -1,0 +1,748 @@
+{
+	"info": {
+		"_postman_id": "a7bb19b9-6efa-4302-bdef-4ec4fba92e63",
+		"name": "LARAVEL JUEGOS API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@email.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/auth/login",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Introduzca el token!!!",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/auth/logout",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Userinfo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Introduzca el token!!!",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/auth/userinfo",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"userinfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@email.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/auth/register",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Introduzca el token!!!",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@email.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/auth/check",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Introduzca el token!!!",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/auth/delete",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Juegos",
+			"item": [
+				{
+					"name": "Desarrolladora",
+					"item": [
+						{
+							"name": "Get Juegos desarrolladoras",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://laravel-api-server.up.railway.app/api/juegos/desarrolladoras/from-software",
+									"protocol": "https",
+									"host": [
+										"laraveljuegosapi",
+										"railwayappapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"juegos",
+										"desarrolladoras",
+										"from-software"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all desarrolladora",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://laravel-api-server.up.railway.app/api/juegos/desarrolladoras/show/all",
+									"protocol": "https",
+									"host": [
+										"laraveljuegosapi",
+										"railwayappapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"juegos",
+										"desarrolladoras",
+										"show",
+										"all"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Generos",
+					"item": [
+						{
+							"name": "Get all generos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://laravel-api-server.up.railway.app/api/juegos/generos/show/all",
+									"protocol": "https",
+									"host": [
+										"laraveljuegosapi",
+										"railwayappapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"juegos",
+										"generos",
+										"show",
+										"all"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get juegos generos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://laravel-api-server.up.railway.app/api/juegos/generos/carreras",
+									"protocol": "https",
+									"host": [
+										"laraveljuegosapi",
+										"railwayappapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"juegos",
+										"generos",
+										"carreras"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add game",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Introduzca el token!!!",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "test123",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "escribiendo...",
+									"type": "text"
+								},
+								{
+									"key": "desarrolladora",
+									"value": "Test1233 Studios",
+									"type": "text"
+								},
+								{
+									"key": "fecha",
+									"value": "2020-08-01",
+									"type": "text"
+								},
+								{
+									"key": "imagen",
+									"value": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPj/HwADBwIAMCbHYQAAAABJRU5ErkJggg==",
+									"type": "text"
+								},
+								{
+									"key": "generos[]",
+									"value": "aventura-grafica",
+									"type": "text"
+								},
+								{
+									"key": "generos[]",
+									"value": "plataformas",
+									"type": "text"
+								},
+								{
+									"key": "generos[]",
+									"value": "simulacion",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/juegos",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"juegos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get slug game",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/juegos/test123",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"juegos",
+								"test123"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all games",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/juegos/",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"juegos",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search games",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/juegos/filter/search?search=dark&filter=fecha&order=ASC",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"juegos",
+								"filter",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "dark"
+								},
+								{
+									"key": "filter",
+									"value": "fecha"
+								},
+								{
+									"key": "order",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit game with image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Introduzca el token!!!",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "test123",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "escribiendo...",
+									"type": "text"
+								},
+								{
+									"key": "desarrolladora",
+									"value": "STUDIO TEST 123",
+									"type": "text"
+								},
+								{
+									"key": "fecha",
+									"value": "2020-08-01",
+									"type": "text"
+								},
+								{
+									"key": "imagen",
+									"value": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPj/HwADBwIAMCbHYQAAAABJRU5ErkJggg==",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "test123",
+									"type": "text"
+								},
+								{
+									"key": "generos[]",
+									"value": "rpg-de-accion",
+									"type": "text"
+								},
+								{
+									"key": "generos[]",
+									"value": "plataformas",
+									"type": "text"
+								},
+								{
+									"key": "generos[]",
+									"value": "cartas",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/juegos/edit",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"juegos",
+								"edit"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete game",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Introduzca el token!!!",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/juegos/delete/test123",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"juegos",
+								"delete",
+								"test123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get games pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/juegos/paginate?page=2&items=8&order",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"juegos",
+								"paginate"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "items",
+									"value": "8"
+								},
+								{
+									"key": "order",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get games random",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://laravel-api-server.up.railway.app/api/juegos/random?items=12",
+							"protocol": "https",
+							"host": [
+								"laraveljuegosapi",
+								"railwayappapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"juegos",
+								"random"
+							],
+							"query": [
+								{
+									"key": "items",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,813 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel Api Juegos",
+        "description": "Documentación de todos los endpoints de un aplicación que consiste en un CRUD de Juegos que contiene relaciones, donde se trabaja con el envió de archivos y también contiene filtros de búsqueda sobre resultados de los juegos que existen insertados, se puede registrar usuarios y también contiene autenticación por SANCTUM para poder realizar la acción de algunos endpoints.<br><br><a href='https://github.com/JAVI-CC/Laravel-API-Server' target='_blank'>https://github.com/JAVI-CC/Laravel-API-Server</a><br><br><a href='https://github.com/JAVI-CC/Laravel-API-Client' target='_blank'>https://github.com/JAVI-CC/Laravel-API-Client</a><br><br><a href='https://github.com/JAVI-CC/VUE3-API-client' target='_blank'>https://github.com/JAVI-CC/VUE3-API-client</a>",
+        "version": "1.0.1"
+    },
+    "paths": {
+        "/api/auth/register": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Registrar un usuario",
+                "description": "Registrar un usuario para que pueda insertar, actualizar y eliminar cualquier juego",
+                "operationId": "register",
+                "requestBody": {
+                    "description": "{name, email, password, password_confirmation}",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "password",
+                                    "password_confirmation"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "$ref": "#/components/schemas/User/properties/name"
+                                    },
+                                    "email": {
+                                        "$ref": "#/components/schemas/User/properties/email"
+                                    },
+                                    "password": {
+                                        "$ref": "#/components/schemas/User/properties/password"
+                                    },
+                                    "password_confirmation": {
+                                        "$ref": "#/components/schemas/User/properties/password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "220": {
+                        "description": "No se cumple todos los requisitos"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        },
+        "/api/auth/login": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Iniciar session un usuario",
+                "description": "Iniciar session con un usuario ya existente en la base de datos",
+                "operationId": "login",
+                "requestBody": {
+                    "description": "{email, password}",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "$ref": "#/components/schemas/User/properties/email"
+                                    },
+                                    "password": {
+                                        "$ref": "#/components/schemas/User/properties/password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "220": {
+                        "description": "No se cumple todos los requisitos"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        },
+        "/api/auth/userinfo": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Para ver la informacion de un usuario",
+                "description": "Para ver iformacion adicional del usuario autenticado",
+                "operationId": "userinfo",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                },
+                "security": [
+                    {
+                        "SANCTUM": []
+                    }
+                ]
+            }
+        },
+        "/api/auth/check": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Comprobar si el usuario esta autenticado",
+                "description": "Comprobar si el usuario esta autenticado a través de su token",
+                "operationId": "check",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                },
+                "security": [
+                    {
+                        "SANCTUM": []
+                    }
+                ]
+            }
+        },
+        "/api/auth/logout": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Cerrar session un usuario",
+                "description": "Cerrar session con un usuario ya existente en la base de datos",
+                "operationId": "logout",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                },
+                "security": [
+                    {
+                        "SANCTUM": []
+                    }
+                ]
+            }
+        },
+        "/api/auth/delete": {
+            "delete": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Eliminar usuario",
+                "description": "Eliminar el usuario autenticado",
+                "operationId": "delete",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                },
+                "security": [
+                    {
+                        "SANCTUM": []
+                    }
+                ]
+            }
+        },
+        "/api/juegos/desarrolladoras/show/all": {
+            "get": {
+                "tags": [
+                    "Desarrolladoras"
+                ],
+                "summary": "Obtener todos las desarrolladoras",
+                "description": "Muestra la información de todos las desarrolladoras que se encuentran insertados en la base de datos.",
+                "operationId": "getAllDesarrolladoras",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        },
+        "/api/juegos/desarrolladoras/{slug}": {
+            "get": {
+                "tags": [
+                    "Desarrolladoras"
+                ],
+                "summary": "Obtener los juegos de una desarrolladora",
+                "description": "Muestra la información de los juegos que pertenece de una desarrolladora en especifico segun el valor del parametro slug.",
+                "operationId": "getDesarrolladora",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "description": "Url del nombre de la desarrolladora",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "test-studios"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        },
+        "/api/juegos/generos/show/all": {
+            "get": {
+                "tags": [
+                    "Generos"
+                ],
+                "summary": "Obtener todos los generos",
+                "description": "Muestra la información de todos los generos que se encuentran insertados en la base de datos.",
+                "operationId": "getAllGeneros",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        },
+        "/api/juegos/generos/{slug}": {
+            "get": {
+                "tags": [
+                    "Generos"
+                ],
+                "summary": "Obtener los juegos de un genero",
+                "description": "Muestra la información de los juegos que pertenece a un genero en especifico segun el valor del parametro slug.",
+                "operationId": "getGenero",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "description": "Url del nombre del genero",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "carreras"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        },
+        "/api/juegos": {
+            "get": {
+                "tags": [
+                    "Juegos"
+                ],
+                "summary": "Obtener todos los juegos",
+                "description": "Muestra todos los registros de juegos en formato JSON",
+                "operationId": "getAllJuegos",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Juegos"
+                ],
+                "summary": "Insertar un juego",
+                "description": "Insertar el registro de un juego nuevo con parametros.",
+                "operationId": "addJuego",
+                "parameters": [
+                    {
+                        "name": "Juego",
+                        "in": "query",
+                        "description": "{nombre, descripcion, desarrolladora, fecha, generos, imagen}",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "nombre": {
+                                    "$ref": "#/components/schemas/Juego/properties/nombre"
+                                },
+                                "descripcion": {
+                                    "$ref": "#/components/schemas/Juego/properties/descripcion"
+                                },
+                                "desarrolladora": {
+                                    "$ref": "#/components/schemas/Juego/properties/desarrolladora"
+                                },
+                                "imagen": {
+                                    "$ref": "#/components/schemas/Juego/properties/imagen"
+                                },
+                                "fecha": {
+                                    "$ref": "#/components/schemas/Juego/properties/fecha"
+                                },
+                                "generos[0]": {
+                                    "type": "string",
+                                    "example": "accion"
+                                },
+                                "generos[1]": {
+                                    "type": "string",
+                                    "example": "first-person-shooter"
+                                },
+                                "generos[2]": {
+                                    "type": "string",
+                                    "example": "multijugador"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Se ha creado correctamente"
+                    },
+                    "220": {
+                        "description": "No se cumple todos los requisitos"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                },
+                "security": [
+                    {
+                        "SANCTUM": []
+                    }
+                ]
+            }
+        },
+        "/api/juegos/paginate": {
+            "get": {
+                "tags": [
+                    "Juegos"
+                ],
+                "summary": "Obtener los juegos por una paginación de X elementos",
+                "description": "Muestra los juegos a través de una paginación",
+                "operationId": "getPaginateJuegos",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Numero de la paginación",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "example": "2"
+                        }
+                    },
+                    {
+                        "name": "items",
+                        "in": "query",
+                        "description": "Numero de juegos por página",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "8"
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "description": "ordenar paginación de juegos (no es obligatorio). Opciones: [nombreAsc, nombrDesc, fechaAsc, fechaDesc]",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        },
+        "/api/juegos/random": {
+            "get": {
+                "tags": [
+                    "Juegos"
+                ],
+                "summary": "Obtener una lista de X juegos aleatorios",
+                "description": "Muestra el resultado de X juegos de forma aleatoria",
+                "operationId": "getRandomJuegos",
+                "parameters": [
+                    {
+                        "name": "items",
+                        "in": "query",
+                        "description": "Numero de juegos",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "6"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        },
+        "/api/juegos/{slug}": {
+            "get": {
+                "tags": [
+                    "Juegos"
+                ],
+                "summary": "Obtener un juego",
+                "description": "Muestra la información de un juego especifico segun el valor del parametro slug.",
+                "operationId": "getJuego",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "description": "Url del nombre del juego",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "test123"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        },
+        "/api/juegos/edit": {
+            "post": {
+                "tags": [
+                    "Juegos"
+                ],
+                "summary": "Actualizar un juego",
+                "description": "Actulizar un juego ya existente",
+                "operationId": "editJuego",
+                "parameters": [
+                    {
+                        "name": "Juego",
+                        "in": "query",
+                        "description": "{nombre, descripcion, desarrolladora, fecha, generos, slug, imagen}",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "nombre": {
+                                    "$ref": "#/components/schemas/Juego/properties/nombre"
+                                },
+                                "descripcion": {
+                                    "$ref": "#/components/schemas/Juego/properties/descripcion"
+                                },
+                                "desarrolladora": {
+                                    "$ref": "#/components/schemas/Juego/properties/desarrolladora"
+                                },
+                                "imagen": {
+                                    "$ref": "#/components/schemas/Juego/properties/imagen"
+                                },
+                                "fecha": {
+                                    "$ref": "#/components/schemas/Juego/properties/fecha"
+                                },
+                                "generos[0]": {
+                                    "type": "string",
+                                    "example": "aventura"
+                                },
+                                "generos[1]": {
+                                    "type": "string",
+                                    "example": "rpg-de-accion"
+                                },
+                                "generos[2]": {
+                                    "type": "string",
+                                    "example": "multijugador"
+                                },
+                                "slug": {
+                                    "$ref": "#/components/schemas/Juego/properties/slug"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "220": {
+                        "description": "No se cumple todos los requisitos"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                },
+                "security": [
+                    {
+                        "SANCTUM": []
+                    }
+                ]
+            }
+        },
+        "/api/juegos/delete/{slug}": {
+            "delete": {
+                "tags": [
+                    "Juegos"
+                ],
+                "summary": "Eliminar un juego",
+                "description": "Elimina un juego especifico segun el valor del parametro slug.",
+                "operationId": "deleteJuego",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "description": "Url del nombre del juego",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "test123"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                },
+                "security": [
+                    {
+                        "SANCTUM": []
+                    }
+                ]
+            }
+        },
+        "/api/juegos/filter/search": {
+            "post": {
+                "tags": [
+                    "Juegos"
+                ],
+                "summary": "Busqueda",
+                "description": "Busqueda por nombres de juegos y también ordena el resultado de distintas maneras.",
+                "operationId": "filterJuego",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Nombre del juego que quieres buscar",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "dark"
+                        }
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Ordenar por diferente tipo. Ejemplos ['nombre', 'descripcion', 'fecha'] ",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "fecha"
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "description": "ordenar de forma 'ASC' o 'DESC'",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "DESC"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "220": {
+                        "description": "No se cumple todos los requisitos"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Desarrolladora": {
+                "properties": {
+                    "nombre": {
+                        "description": "Nombre de la desarrolladora",
+                        "type": "string",
+                        "example": "Test123 Studios"
+                    },
+                    "slug": {
+                        "description": "Url amigable del nombre de la desarrolladora",
+                        "type": "string",
+                        "example": "test123-studios"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Desarrolladora"
+                }
+            },
+            "Genero": {
+                "properties": {
+                    "nombre": {
+                        "description": "Nombre del genero",
+                        "type": "string",
+                        "example": "Rpg de Acción"
+                    },
+                    "slug": {
+                        "description": "Url amigable del nombre del genero",
+                        "type": "string",
+                        "example": "rpg-de-accion"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Genero"
+                }
+            },
+            "Juego": {
+                "properties": {
+                    "nombre": {
+                        "description": "Nombre del juego",
+                        "type": "string",
+                        "example": "Test123"
+                    },
+                    "descripcion": {
+                        "description": "descripción del juego",
+                        "type": "string",
+                        "example": "insertando juego de prueba..."
+                    },
+                    "desarrolladora": {
+                        "description": "nombre de la desarrolladora que pertenece al juego",
+                        "type": "string",
+                        "example": "Test123 Studios"
+                    },
+                    "imagen": {
+                        "description": "imagen en base64 que pertenece al juego",
+                        "type": "string",
+                        "format": "base64",
+                        "example": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPj/HwADBwIAMCbHYQAAAABJRU5ErkJggg=="
+                    },
+                    "fecha": {
+                        "description": "fecha de salida de lanzamiento del juego",
+                        "type": "string",
+                        "example": "2021-01-01"
+                    },
+                    "generos": {
+                        "description": "Slugs de generos ya existentes en la base de datos de tipo array (No se puede insertar generos que no esten registrado en la base de datos).",
+                        "type": "string",
+                        "example": [
+                            "aventura",
+                            "rpg-de-accion",
+                            "multijugador"
+                        ]
+                    },
+                    "slug": {
+                        "description": "Url amigable del nombre del juego",
+                        "type": "string",
+                        "example": "test123"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Juego"
+                }
+            },
+            "User": {
+                "properties": {
+                    "name": {
+                        "description": "Nombre del usuario",
+                        "type": "string",
+                        "example": "prueba"
+                    },
+                    "email": {
+                        "description": "Email del usuario",
+                        "type": "string",
+                        "example": "prueba@email.com"
+                    },
+                    "password": {
+                        "description": "Password del usuario",
+                        "type": "string",
+                        "example": "12345678"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "User"
+                }
+            }
+        },
+        "securitySchemes": {
+            "SANCTUM": {
+                "type": "apiKey",
+                "description": "Clave API de tipo Bearer Token para poder utilizar todas las peticiones.",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

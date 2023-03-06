@@ -1,0 +1,150 @@
+[
+    {
+        "nombre": "Ubisoft",
+        "slug": "ubisoft"
+    },
+    {
+        "nombre": "SIE Bend Studio",
+        "slug": "sie-bend-studio"
+    },
+    {
+        "nombre": "Electronics Arts",
+        "slug": "electronic-arts"
+    },
+    {
+        "nombre": "Vicarious Visions",
+        "slug": "vicarious-visions"
+    },
+    {
+        "nombre": "Team ICO",
+        "slug": "team-ico"
+    },
+    {
+        "nombre": "From Software",
+        "slug": "from-software"
+    },
+    {
+        "nombre": "Id Software",
+        "slug": "id-software"
+    },
+    {
+        "nombre": "Rockstar Games",
+        "slug": "rockstar-games"
+    },
+    {
+        "nombre": "Toys for Bob",
+        "slug": "toys-for-bob"
+    },
+    {
+        "nombre": "Rebelion",
+        "slug": "rebelion"
+    },
+    {
+        "nombre": "StudioMDHR",
+        "slug": "studiomdhr"
+    },
+    {
+        "nombre": "Bungie Studios",
+        "slug": "bungie-studios"
+    },
+    {
+        "nombre": "Other Ocean",
+        "slug": "other-ocean"
+    },
+    {
+        "nombre": "Radical Entertainment",
+        "slug": "radical-entertaiment"
+    },
+    {
+        "nombre": "Santa Monica Studio",
+        "slug": "santa-monica-studio"
+    },
+    {
+        "nombre": "Sucker Punch Productions",
+        "slug": "sucker-punch-productions"
+    },
+    {
+        "nombre": "Nintendo Entertainment",
+        "slug": "nintendo-entertaiment"
+    },
+    {
+        "nombre": "Guerrilla Games",
+        "slug": "guerrilla-games"
+    },
+    {
+        "nombre": "Mojang Studios",
+        "slug": "mojang-studios"
+    },
+    {
+        "nombre": "CD Projekt RED",
+        "slug": "cd-projekt-red"
+    },
+    {
+        "nombre": "Konami",
+        "slug": "konami"
+    },
+    {
+        "nombre": "The Coalition",
+        "slug": "the-coalition"
+    },
+    {
+        "nombre": "Bethesda Game Studios",
+        "slug": "bethesda-game-studios"
+    },
+    {
+        "nombre": "Retro Studios",
+        "slug": "retro-studios"
+    },
+    {
+        "nombre": "Square Enix",
+        "slug": "square-enix"
+    },
+    {
+        "nombre": "Game Freak",
+        "slug": "game-freak"
+    },
+    {
+        "nombre": "Beenox",
+        "slug": "beenox"
+    },
+    {
+        "nombre": "Capcom",
+        "slug": "capcom"
+    },
+    {
+        "nombre": "Tripwire Interactive",
+        "slug": "tripwire-interactive"
+    },
+    {
+        "nombre": "Hangar 13",
+        "slug": "hangar-13"
+    },
+    {
+        "nombre": "Naughty Dog",
+        "slug": "nauhty-dog"
+    },
+    {
+        "nombre": "Warhorse Studios",
+        "slug": "warhose-studios"
+    },
+    {
+        "nombre": "THQ Nordic",
+        "slug": "thq-nordic"
+    },
+    {
+        "nombre": "Insomniac Games",
+        "slug": "insomniac-games"
+    },
+    {
+        "nombre": "Chucklefish",
+        "slug": "chucklefish"
+    },
+    {
+        "nombre": "Hazelight Studios",
+        "slug": "hazelight-studios"
+    },
+    {
+        "nombre": "EA Sports",
+        "slug": "ea-sports"
+    }
+]
